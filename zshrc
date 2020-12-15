@@ -100,3 +100,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias ida="wine ~/Software/IDA\ Pro/ida.exe &"
 alias ida64="wine ~/Software/IDA\ Pro/ida64.exe &"
+
+source /home/izayoi/Software/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
