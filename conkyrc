@@ -12,7 +12,7 @@ conky.config = {
   draw_outline = false,
   draw_shades = false,
   use_xft = true,
-  font = 'DejaVu Sans Mono:size=10',
+  font = 'DejaVu Sans Mono:Bold:size=10',
   gap_x = 10,
   gap_y = 10,
   maximum_width = 250,
@@ -39,10 +39,10 @@ conky.config = {
 }
 
 conky.text = [[
-${color #FFFFFF}${font}${font Open Sans:Bold:size=30}$alignr${time %H:%M}$font$color${font Open Sans:Bold:size=15}
+${color #FFFFFF}${font}${font Open Sans:Bold:size=32}$alignr${time %H:%M}$font$color${font Open Sans:Bold:size=16}
 ${color #FFFFFF}$alignr${time %a}, ${time %d %b %Y}$font$color
 
-${font Open Sans:Bold:size=10}${color #FF994E}SYSTEM ${hr 2}$color${font}${offset 1}
+${font Open Sans:Bold:size=10}${color #FFFFFF}SYSTEM ${hr 2}$color${font}${offset 1}
 ${color #FF994E}Kernel ${color1}$alignr $kernel
 ${color #FF994E}Uptime ${color1}$alignr $uptime
 
