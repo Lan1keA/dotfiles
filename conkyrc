@@ -40,7 +40,7 @@ conky.config = {
 
 conky.text = [[
 ${color #FFFFFF}${font}${font Open Sans:Bold:size=23}やれやれ DA★ZE
-$font$color${font Open Sans:Bold:size=16}${color #FFFFFF}$alignr${time %a}, ${time %d %b %Y}$font$color
+$font$color${font Open Sans:Bold:size=16}${color #B0BEC5}$alignr${time %a}, ${time %d %b %Y}$font$color
 
 ${font Open Sans:Bold:size=10}${color #FFFFFF}SYSTEM ${hr 2}$color${font}${offset 1}
 ${color #B0BEC5}Kernel ${color E0E0E0}$alignr $kernel
