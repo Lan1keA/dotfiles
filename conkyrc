@@ -51,17 +51,17 @@ ${font Open Sans:Bold:size=10}${color FFFFFF}CPU ${hr 2}$color${font}
 ${color B0BEC5}${font FontAwesome}${font}${lua processor}${color B0BEC5}CPU Freq: ${color E0E0E0}$alignr $freq_g GHz
 ${color B0BEC5}${font}Usage: ${color E0E0E0} $alignr $cpu %
 ${color B0BEC5}Temperature: ${color E0E0E0} $alignr ${acpitemp}°C
-$font${color #B0BEC5}Core1 ${color E0E0E0}${cpu cpu1}% ${cpubar cpu1}
+$font${color #B0BEC5}Core1 ${color 81C784}${cpu cpu1}% ${cpubar cpu1}
 ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 1}MHz
 ${color #B0BEC5}Core2 ${color E0E0E0}${cpu cpu2}% ${cpubar cpu2}
 ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 2}MHz
-${color #B0BEC5}Core3 ${color E0E0E0}${cpu cpu3}% ${cpubar cpu3}
+${color #B0BEC5}Core3 ${color EF9A9A}${cpu cpu3}% ${cpubar cpu3}
 ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 3}MHz
 ${color #B0BEC5}Core4 ${color E0E0E0}${cpu cpu4}% ${cpubar cpu4}
 ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 4}MHz
 ${color #B0BEC5}Core5 ${color E0E0E0}${cpu cpu5}% ${cpubar cpu5}
 ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 5}MHz
-${color #B0BEC5}Core6 ${color E0E0E0}${cpu cpu6}% ${cpubar cpu6}
+${color #B0BEC5}Core6 ${color 81C784}${cpu cpu6}% ${cpubar cpu6}
 ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 6}MHz
 
 # RAM
