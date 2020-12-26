@@ -1,5 +1,5 @@
 conky.config = {
-  alignment = 'bottom_left',
+  alignment = 'bottom_right',
   xinerama_head = 2,
   background = false,
   border_width = 0,
@@ -92,6 +92,7 @@ ${color DimGray}${upspeedgraph wlo1 20,250 FFFFFF FFFFFF}
 ${color B0BEC5}Down $alignr ${color #FFFFFF}${downspeed wlo1}
 ${color DimGray}${downspeedgraph wlo1 20,250 FFFFFF FFFFFF}  
 ${color FFFFFF}UP: $alignr ${totalup wlo1}${color #FFFFFF} DOWN: $alignr ${totaldown wlo1}
+
 
 
 ]]
