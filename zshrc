@@ -100,5 +100,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias ida="wine ~/Software/IDA\ Pro/ida.exe &"
 alias ida64="wine ~/Software/IDA\ Pro/ida64.exe &"
+alias vmware-init="sudo /etc/init.d/vmware start"
 
 source /home/izayoi/Software/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
