@@ -103,3 +103,5 @@ alias ida64="wine ~/Software/IDA\ Pro/ida64.exe &"
 alias vmware-init="sudo /etc/init.d/vmware start"
 
 source /home/izayoi/Software/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="/home/izayoi/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/izayoi"
