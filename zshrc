@@ -103,8 +103,8 @@ alias ida="wine64 ~/Software/IDA\ Pro/ida.exe &"
 alias ida64="wine64 ~/Software/IDA\ Pro/ida64.exe &"
 alias vmware-init="sudo /etc/init.d/vmware start"
 alias ghidra="~/Software/ghidra/ghidraRun"
-alias weread="google-chrome-stable --app="https://weread.qq.com""
 
 source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/home/izayoi/.webapp"
 
 export PATH="/home/izayoi/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/izayoi:/home/izayoi/.local/bin"

@@ -39,12 +39,10 @@ conky.config = {
 }
 
 conky.text = [[
-${color #FFFFFF}${font}${font Open Sans:Bold:size=23}やれやれ DA★ZE
-$font$color${font Open Sans:Bold:size=16}${color #E0E0E0}$alignr${time %b %d}日, 周${time %a}$font$color
-
 ${font Open Sans:Bold:size=10}${color #FFFFFF}SYSTEM ${hr 2}$color${font}${offset 1}
 ${color #B0BEC5}Kernel ${color E0E0E0}$alignr $kernel
 ${color #B0BEC5}Uptime ${color E0E0E0}$alignr $uptime
+
 
 # CPU
 ${font Open Sans:Bold:size=10}${color FFFFFF}CPU ${hr 2}$color${font}
@@ -64,6 +62,7 @@ ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 5}MHz
 ${color #B0BEC5}Core6 ${color FFFFFF}${cpu cpu6}% ${cpubar cpu6}
 ${color #B0BEC5}Freq: ${color E0E0E0} ${freq 6}MHz
 
+
 # RAM
 ${font Open Sans:Bold:size=10}${color #FFFFFF}RAM ${hr 2}$color${font}
 ${color B0BEC5}Total: ${color E0E0E0}$alignr $memmax
@@ -71,6 +70,7 @@ ${color B0BEC5}In use: ${color E0E0E0}$alignr $mem
 ${color B0BEC5}Free: ${color E0E0E0}$alignr $memeasyfree
 $font${color B0BEC5}MEM: ${color E0E0E0}$alignc $mem / $memmax $alignr $memperc%
 ${color FFFFFF}$membar
+
 
 # Disk
 ${font Arial:bold:size=10}${color #FFFFFF}SSD ${color #FFFFFF}${hr 2}
@@ -82,6 +82,7 @@ ${color DimGray}${diskiograph_read 20,250 FFFFFF FFFFFF 750}
 ${color B0BEC5}Write:
 ${color DimGray}${diskiograph_write 20,250 FFFFFF FFFFFF 750}
 
+
 # Network
 ${font Arial:bold:size=10}${color #FFFFFF}NETWORK ${color #FFFFFF}${hr 2}
 ${color #B0BEC5}Public IP: $alignr${color E0E0E0}${execi 60 curl ipinfo.io/ip}
@@ -92,6 +93,8 @@ ${color DimGray}${upspeedgraph wlo1 20,250 FFFFFF FFFFFF}
 ${color B0BEC5}Down $alignr ${color #FFFFFF}${downspeed wlo1}
 ${color DimGray}${downspeedgraph wlo1 20,250 FFFFFF FFFFFF}  
 ${color FFFFFF}UP: $alignr ${totalup wlo1}${color #FFFFFF} DOWN: $alignr ${totaldown wlo1}
+
+
 
 
 

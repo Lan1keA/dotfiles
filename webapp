@@ -1,0 +1,3 @@
+alias weread="google-chrome-stable --app="https://weread.qq.com""
+alias translate="google-chrome-stable --app="https://translate.google.cn""
+alias youtube="google-chrome-stable --app="https://www.youtube.com""
