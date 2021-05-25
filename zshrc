@@ -10,7 +10,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 source "/home/izayoi/.webapp"
-source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 alias ls="lsd"
 alias ida="/opt/IDA_Pro/ida"

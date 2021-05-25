@@ -10,7 +10,6 @@ set softtabstop=4
 set backspace=indent,eol,start
 
 
-
 " Vundle
 set nocompatible
 filetype off
@@ -20,7 +19,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 
@@ -28,23 +26,16 @@ call vundle#end()
 filetype plugin indent on
 
 
-
 " NERDTree map
 map <C-\> :NERDTreeToggle<CR>
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
 
-
-" vim-colors-solarized
+" color
 syntax enable
-
 set background=dark
-
 let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-
 colorscheme solarized
-
 
 
 " YouCompleteMe
