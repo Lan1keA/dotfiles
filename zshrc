@@ -1,22 +1,28 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/home/izayoi/.oh-my-zsh"
+export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34:cd=34:su=30:sg=30:tw=30:ow=30"
+export PROMPT_EOL_MARK='↵'
 
-#ZSH_THEME="kardan"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="avit"
-#ZSH_THEME="fox"
-#ZSH_THEME="jonathan"
+# ZSH_THEME="refined"
+# ZSH_THEME="agnoster"
 
-plugins=(git)
+plugins=(
+    git
+    sudo
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
-source "/home/izayoi/.webapp"
-source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-alias ls="lsd"
-alias ida="/opt/IDA_Pro/ida"
-alias ida64="/opt/IDA_Pro/ida64"
-alias vmware-init="sudo /etc/init.d/vmware start"
-alias ghidra="/opt/ghidra/ghidraRun"
-alias burp="java -jar /opt/burp/BurpSuiteLoader.jar &"
-
-export PATH="/home/izayoi/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/izayoi:/home/izayoi/.local/bin"
+alias l='/bin/ls'
+alias ls='lsd'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+alias ipy='ipython3'
+alias py='python3 -q'
+alias f.n='find . -name'
+alias pms='python -m http.server'
+alias v='nvim'
