@@ -12,7 +12,7 @@ nnoremap <C-t> <C-w>s<C-w>j:terminal<CR>i
 tnoremap <Esc> <C-\><C-n>
 
 call plug#begin()
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'junegunn/seoul256.vim'
     " Plug 'luochen1990/rainbow'
     Plug 'preservim/nerdtree'
