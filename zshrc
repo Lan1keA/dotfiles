@@ -15,7 +15,7 @@ plugins=(
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
-alias l='/bin/ls'
+# alias l='/bin/ls'
 # alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -a'
