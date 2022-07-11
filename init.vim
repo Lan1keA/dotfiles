@@ -13,8 +13,6 @@ tnoremap <Esc> <C-\><C-n>
 
 call plug#begin()
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'junegunn/seoul256.vim'
-    " Plug 'luochen1990/rainbow'
     Plug 'preservim/nerdtree'
     Plug 'sonph/onehalf', { 'rtp': 'vim'  }
     Plug 'mhinz/vim-startify'
@@ -24,9 +22,7 @@ call plug#begin()
     Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
-" let g:seoul256_background = 233
-" colorscheme seoul256
-colorscheme onehalflight
+colorscheme onehalfdark
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -36,4 +32,3 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 let g:startify_custom_header = startify#pad(split(system('figlet -w 100 ZKVIM'), '\n'))
 let g:airline_theme='seoul256'
-" let g:rainbow_active = 1
