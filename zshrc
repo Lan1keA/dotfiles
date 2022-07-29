@@ -14,11 +14,11 @@ plugins=(
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
-# alias ls='lsd'
+alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-# alias lt='ls --tree'
+alias lt='ls --tree'
 alias v='nvim'
 alias ipy='ipython3'
 alias py='python3 -q'

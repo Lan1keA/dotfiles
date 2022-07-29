@@ -8,14 +8,16 @@ set fileencodings=utf-8,gbk,gb2312
 
 
 call plug#begin()
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'octol/vim-cpp-enhanced-highlight'
-    Plug 'preservim/nerdtree'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'preservim/nerdtree'
     Plug 'sonph/onehalf', { 'rtp': 'vim'  }
+    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'mhinz/vim-startify'
     Plug 'jiangmiao/auto-pairs'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 colorscheme onehalfdark
@@ -24,8 +26,8 @@ inoremap jj <Esc>
 nnoremap <Esc> ZZ
 nnoremap <C-t> <C-w>s<C-w>j:terminal<CR>i
 tnoremap <Esc> <C-\><C-n>
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <C-f> :NvimTreeFindFile<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
