@@ -33,4 +33,5 @@ highlight Normal ctermbg=black
 lua require('nvim-tree_setup')
 
 let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
 let g:startify_custom_header = startify#pad(split(system('figlet -w 100 ZKVIM'), '\n'))
