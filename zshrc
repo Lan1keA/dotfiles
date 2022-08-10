@@ -1,9 +1,9 @@
 export PROMPT_EOL_MARK='↵'
 
-# ZSH_THEME="robbyrussell"
 ZSH_THEME="avit"
 # ZSH_THEME="refined"
 # ZSH_THEME="agnoster"
+# ZSH_THEME="robbyrussell"
 
 plugins=(
     git

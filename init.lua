@@ -24,18 +24,21 @@ vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeCollapse<CR>', { noremap = true,
 vim.api.nvim_set_keymap('n', '<C-f>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-m>', ':CommentToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
-vim.keymap.set('i', '<Tab>', function()
-    return vim.fn.pumvisible() == 1 and '<C-N>' or '<Tab>'
-end, {expr = true})
-vim.keymap.set('i', '<S-Tab>', function()
-    return vim.fn.pumvisible() == 1 and '<C-P>' or '<S-Tab>'
-end, {expr = true})
+vim.cmd([[
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+    inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1): <SID>check_back_space() ? "\<Tab>" : coc#refresh()
+    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+    inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+]])
 
 
 -- packer.nvim Bootstrap --
 local packer_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
-    packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path})
 end
 
 
@@ -45,7 +48,6 @@ return require('packer').startup(function()
 
     -- Themes --
     use 'sainnhe/edge'
-    use 'sainnhe/gruvbox-material'
 
     -- Icons --
     use 'kyazdani42/nvim-web-devicons'
@@ -134,9 +136,7 @@ return require('packer').startup(function()
             local wilder = require('wilder')
             wilder.setup({modes = {':', '/', '?'}})
             wilder.set_option('renderer', wilder.popupmenu_renderer({
-                highlighter = wilder.basic_highlighter(),
-                left = {' ', wilder.popupmenu_devicons()},
-                right = {' ', wilder.popupmenu_scrollbar()},
+                pumblend = 20,
             }))
         end,
     }
