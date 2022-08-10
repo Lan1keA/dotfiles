@@ -1,13 +1,19 @@
 -- Global Variables --
 vim.o.number=true
 vim.o.noshowmode=true
-vim.o.tabstop=4
 vim.o.expandtab=true
-vim.o.shiftwidth=4
 vim.o.cursorline=true
 vim.o.cursorcolumn=true
+vim.o.tabstop=4
+vim.o.shiftwidth=4
 vim.o.encoding='UTF-8'
 vim.o.fileencodings='UTF-8,GBK,GB2312'
+
+
+-- Options --
+vim.cmd([[ colorscheme edge ]])
+-- vim.api.nvim_set_hl(0, 'Normal', {bg="#000000"})
+
 
 -- Key Maps --
 vim.api.nvim_set_keymap('n', '<Esc>', 'ZZ', { noremap = true, silent = true })
@@ -17,37 +23,54 @@ vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeCollapse<CR>', { noremap = true,
 vim.api.nvim_set_keymap('n', '<C-f>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-m>', ':CommentToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
---vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\<C-n>" : "\<Tab>"', { noremap = true, expr = true })
---vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\<C-p>" : "\<S-Tab>"', { noremap = true, expr = true })
---vim.api.nvim_set_keymap('t', '<Esc>', '<C-\><C-n>', { noremap = true, silent = true })
+vim.keymap.set('i', '<Tab>', function()
+    return vim.fn.pumvisible() == 1 and '<C-N>' or '<Tab>'
+end, {expr = true})
+vim.keymap.set('i', '<S-Tab>', function()
+    return vim.fn.pumvisible() == 1 and '<C-P>' or '<S-Tab>'
+end, {expr = true})
 
-vim.cmd([[
-colorscheme edge
-"highlight Normal ctermbg=black
-let g:airline_theme='edge'
-"let g:airline_powerline_fonts = 1
-let g:startify_custom_header = startify#pad(split(system('figlet -w 100 ZKVIM'), '\n'))
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-tnoremap <Esc> <C-\><C-n>
-]])
 
 -- packer.nvim Bootstrap --
 local packer_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
-  packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
+
 
 --  Neovim Plugins --
 return require('packer').startup(function() 
     use 'wbthomason/packer.nvim'
 
+    -- Themes --
     use 'sainnhe/edge'
-    use 'mhinz/vim-startify'
+    use 'sainnhe/gruvbox-material'
+
+    -- Icons --
+    use 'kyazdani42/nvim-web-devicons'
+
+    -- Lua Airline --
+    use 'nvim-lualine/lualine.nvim'
+    require('lualine').setup {
+        options = { theme = 'auto',
+            section_separators = { left = ' ', right = '  '},
+            component_separators = { left = ' ', right = ' ' }
+        }
+    }
+
+    -- Dashboard --
+    use {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.startify'.config)
+        end
+    }
+    
+    -- Edit Enhance --
     use 'jiangmiao/auto-pairs'
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
-    use 'neoclide/coc.nvim' --, {'branch': 'release'}
+
+    -- LSP --
+    use {'neoclide/coc.nvim', branch = 'release'}
 
     -- Indent Indicator --
     use "lukas-reineke/indent-blankline.nvim"
@@ -76,11 +99,7 @@ return require('packer').startup(function()
     require("bufferline").setup{}
 
     -- File Explorer --
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = { 'kyazdani42/nvim-web-devicons' },
-        tag = 'nightly'
-    }
+    use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
     require("nvim-tree").setup({
         sort_by = "case_sensitive",
         view = {
@@ -104,9 +123,7 @@ return require('packer').startup(function()
     require('scrollview').setup({
         excluded_filetypes = {'nerdtree'},
         current_only = true,
-        winblend = 75,
-        base = 'buffer',
-        column = 80
+        base = 'right'
     })
 
     -- Advance Menu --
