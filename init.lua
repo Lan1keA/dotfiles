@@ -1,5 +1,6 @@
 -- Global Variables --
-vim.o.number=true
+vim.o.nu=true
+vim.o.rnu=true
 vim.o.noshowmode=true
 vim.o.expandtab=true
 vim.o.cursorline=true
@@ -105,16 +106,16 @@ return require('packer').startup(function()
         view = {
             adaptive_size = true,
             mappings = {
-            list = {
-                { key = "u", action = "dir_up" },
+                list = {
+                    { key = "u", action = "dir_up" },
+                },
             },
         },
-     },
-    renderer = {
-        group_empty = true,
-    },
-    filters = {
-        dotfiles = true,
+        renderer = {
+            group_empty = true,
+        },
+        filters = {
+            dotfiles = true,
         },
     })
 
