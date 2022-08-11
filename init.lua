@@ -23,6 +23,8 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeCollapse<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-f>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-m>', ':CommentToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-i>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-o>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 vim.cmd([[
     function! s:check_back_space() abort
@@ -44,6 +46,7 @@ end
 
 --  Neovim Plugins --
 return require('packer').startup(function() 
+
     use 'wbthomason/packer.nvim'
 
     -- Themes --
@@ -99,7 +102,17 @@ return require('packer').startup(function()
     -- Tab Bar --
     use {'akinsho/bufferline.nvim', tag = "v2.*"}
     vim.opt.termguicolors = true
-    require("bufferline").setup{}
+    require("bufferline").setup{
+        options = {
+            separator_style = "padded_slant",
+            offsets = {{
+                filetype = "NvimTree",
+                text = "[ TREE ]",
+                highlight = "Directory",
+                text_align = "left"
+            }}
+        }
+    }
 
     -- File Explorer --
     use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
