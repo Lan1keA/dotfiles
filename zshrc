@@ -1,3 +1,4 @@
+source .profile
 export PROMPT_EOL_MARK='↵'
 
 ZSH_THEME="avit"
