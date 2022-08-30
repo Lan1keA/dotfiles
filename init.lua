@@ -23,18 +23,18 @@ vim.api.nvim_set_keymap('n', '<Esc>', ':q<CR>', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<C-t>', '<C-w>s<C-w>j:terminal<CR>i', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeCollapse<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-f>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-s>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', ':CommentToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-i>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-o>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-f>', '<C-d>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-d>', '<C-u>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 vim.cmd([[
-	function! s:check_back_space() abort
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-	endfunction
-	inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1): <SID>check_back_space() ? "\<Tab>" : coc#refresh()
-	inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+	inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+	inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+	inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
+	inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
 	inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 ]])
 
