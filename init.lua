@@ -2,7 +2,7 @@
 vim.o.nu=true
 vim.o.rnu=true
 vim.o.noshowmode=true
-vim.o.expandtab=false
+vim.o.expandtab=true
 vim.o.cursorline=true
 vim.o.cursorcolumn=true
 vim.o.tabstop=4
