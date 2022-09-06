@@ -1,3 +1,10 @@
+-- packer.nvim Bootstrap --
+local packer_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
+	packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path})
+end
+
+
 -- Global Variables --
 vim.o.nu=true
 vim.o.rnu=true
@@ -37,13 +44,6 @@ vim.cmd([[
 	inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
 	inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 ]])
-
-
--- packer.nvim Bootstrap --
-local packer_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
-	packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path})
-end
 
 
 --  Neovim Plugins --
