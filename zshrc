@@ -3,6 +3,13 @@ ZSH_THEME="avit"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="robbyrussell"
 
+plugins=(
+    git
+    sudo
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+
 source ~/.profile
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
@@ -10,13 +17,6 @@ export GOPATH=/opt/go
 export BAT_THEME=GitHub
 export PROMPT_EOL_MARK='↵'
 export PATH=$PATH:/opt/homebrew/bin:/opt/bin/:/opt/metasploit-framework/bin
-
-plugins=(
-    git
-    sudo
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
 
 alias v='nvim'
 alias l='/bin/ls'
