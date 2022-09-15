@@ -61,8 +61,8 @@ return require('packer').startup(function()
 	use 'nvim-lualine/lualine.nvim'
 	require('lualine').setup {
 		options = { theme = 'auto',
-			section_separators = { left = ' ', right = ' '},
-			component_separators = { left = ' ', right = ' ' }
+			section_separators = { left = '', right = ''},
+			component_separators = { left = '', right = '' }
 		}
 	}
 
@@ -106,7 +106,7 @@ return require('packer').startup(function()
 	vim.opt.termguicolors = true
 	require("bufferline").setup{
 		options = {
-			separator_style = "padded_slant",
+			separator_style = "thin",
 			offsets = {{
 				filetype = "NvimTree",
 				text = "[ TREE ]",
