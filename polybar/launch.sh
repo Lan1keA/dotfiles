@@ -10,3 +10,4 @@ echo "---" | tee -a /tmp/polybar-example.log
 polybar example 2>&1 | tee -a /tmp/polybar-example.log & disown
 
 echo "Bars launched..."
+
