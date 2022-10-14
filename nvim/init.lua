@@ -33,8 +33,8 @@ vim.api.nvim_set_keymap('n', '<C-s>', ':NvimTreeFindFile<CR>', { noremap = true,
 vim.api.nvim_set_keymap('n', '<C-h>', ':CommentToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-o>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-i>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-f>', '<C-d>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-d>', '<C-u>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-f>', '<C-d>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-d>', '<C-u>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 vim.cmd([[
 	inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
