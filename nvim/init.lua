@@ -36,13 +36,13 @@ vim.api.nvim_set_keymap('n', '<C-i>', ':BufferLineCyclePrev<CR>', { noremap = tr
 -- vim.api.nvim_set_keymap('n', '<C-f>', '<C-d>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<C-d>', '<C-u>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
-vim.cmd([[
-	inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
-	inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
-	inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
-	inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
-	inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
-]])
+-- vim.cmd([[
+-- 	inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+-- 	inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+-- 	inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
+-- 	inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
+-- 	inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+-- ]])
 
 
 --  Neovim Plugins --
@@ -77,7 +77,7 @@ return require('packer').startup(function()
 	use 'jiangmiao/auto-pairs'
 
 	-- LSP --
-	use {'neoclide/coc.nvim', branch = 'release'}
+	-- use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- Indent Indicator --
 	use "lukas-reineke/indent-blankline.nvim"
