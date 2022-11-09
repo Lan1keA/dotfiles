@@ -1,12 +1,18 @@
 set $mod Mod1
 
-font pango:Ubuntu 12
+font pango:Ubuntu 11
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+exec --no-startup-id feh --bg-scale '/usr/share/wallpapers/KDE.jpeg'
+
+exec --no-startup-id picom -CGb
+
+exec_always --no-startup-id ibus-daemon -dr
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -117,27 +123,46 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+t
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+t mode "default"
+    # back to normal: Enter or Escape or $mod+t
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+t mode "default"
 }
 
 bindsym $mod+t mode "resize"
+
+# Theme colors
+client.focused #81a2be #81a2be #1d1f21 #282a2e
+client.focused_inactive #373b41 #373b41 #969896 #282a2e
+client.unfocused #282a2e #282a2e #969896 #282a2e
+client.urgent #373b41 #cc6666 #ffffff #cc6666
+
+bar {
+    status_command i3status
+    colors {
+        separator #969896
+        background #1d1f21
+        statusline #c5c8c6
+        focused_workspace #81a2be #81a2be #1d1f21 #FFFFFF
+        active_workspace #373b41 #373b41 #ffffff #FFFFFF
+        inactive_workspace #282a2e #282a2e #969896 #888888
+        urgent_workspace #cc6666 #cc6666 #ffffff #FFFFFF
+    }
+}
