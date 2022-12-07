@@ -1,3 +1,4 @@
+export ZSH_DISABLE_COMPFIX="true"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/opt/go
