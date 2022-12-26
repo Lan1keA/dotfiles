@@ -1,0 +1,104 @@
+# Colors (Tomorrow)
+# colors:
+#   bright:
+#     black: '#aaaaaa'
+#     blue: '#4271ae'
+#     cyan: '#3e999f'
+#     green: '#718c00'
+#     magenta: '#8959a8'
+#     red: '#c82829'
+#     white: '#ffffff'
+#     yellow: '#eab700'
+#   cursor:
+#     cursor: '#4d4d4c'
+#     text: '#ffffff'
+#   normal:
+#     black: '#000000'
+#     blue: '#4271ae'
+#     cyan: '#3e999f'
+#     green: '#718c00'
+#     magenta: '#8959a8'
+#     red: '#c82829'
+#     white: '#7f7f7f'
+#     yellow: '#eab700'
+#   primary:
+#     background: '#ffffff'
+#     foreground: '#4d4d4c'
+#   selection:
+#     background: '#d6d6d6'
+#     text: '#4d4d4c'
+
+# Colors (Tomorrow Night)
+colors:
+  bright:
+    black: '#555555'
+    blue: '#81a2be'
+    cyan: '#8abeb7'
+    green: '#b5bd68'
+    magenta: '#b294bb'
+    red: '#cc6666'
+    white: '#ffffff'
+    yellow: '#f0c674'
+  cursor:
+    cursor: '#c5c8c6'
+    text: '#1d1f21'
+  normal:
+    black: '#000000'
+    blue: '#81a2be'
+    cyan: '#8abeb7'
+    green: '#b5bd68'
+    magenta: '#b294bb'
+    red: '#cc6666'
+    white: '#ffffff'
+    yellow: '#f0c674'
+  primary:
+    background: '#1d1f21'
+    foreground: '#c5c8c6'
+  selection:
+    background: '#373b41'
+    text: '#c5c8c6'
+
+font:
+  normal:
+    family: "FiraCode Nerd Font"
+    style: Regular
+  bold:
+    family: "FiraCode Nerd Font"
+    style: Bold
+  italic:
+    family: "FiraCode Nerd Font"
+    style: Italic
+  bold_italic:
+    family: "FiraCode Nerd Font"
+    style: Bold Italic
+
+  size: 12.0 
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+window:
+  dimensions:
+    columns: 90
+    lines: 30
+
+scrolling:
+  history: 10000
+  multiplier: 10
+
+draw_bold_text_with_bright_colors: true
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: true
+
+live_config_reload: true
+
+key_bindings:
+  - { key: V, mods: command, action: Paste }
+  - { key: C, mods: command, action: Copy }
+
