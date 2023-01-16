@@ -15,7 +15,9 @@ plugins=(
 source ~/.profile
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
-export BAT_THEME=GitHub
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 export PROMPT_EOL_MARK='↵'
 
 alias v='nvim'
@@ -25,7 +27,6 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
-alias bat='batcat'
 alias ipy='ipython'
 alias py='python -q'
 alias dk='sudo docker'
