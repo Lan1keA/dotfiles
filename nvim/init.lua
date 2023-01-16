@@ -158,4 +158,7 @@ return require('packer').startup(function()
 	-- Highlight Words --
 	use { 'RRethy/vim-illuminate' }
 
+    -- Code game --
+    use { 'eandrju/cellular-automaton.nvim' }
+
 end)
