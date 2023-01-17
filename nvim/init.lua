@@ -19,9 +19,8 @@ vim.o.fileencodings='UTF-8,GBK,GB2312'
 
 -- Options --
 vim.cmd([[ 
-    set background=dark
+    set background=light
     colorscheme edge 
-    let g:edge_style = 'aura'
     let g:edge_better_performance = 1
 ]])
 
