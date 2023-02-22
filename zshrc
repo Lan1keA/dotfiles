@@ -1,5 +1,3 @@
-bindkey -v
-
 ZSH_THEME="avit"
 # ZSH_THEME="refined"
 # ZSH_THEME="agnoster"
