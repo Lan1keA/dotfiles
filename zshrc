@@ -6,6 +6,7 @@ ZSH_THEME="avit"
 plugins=(
     git
     sudo
+    extract
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
