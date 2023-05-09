@@ -1,7 +1,10 @@
+set PATH /opt/homebrew/bin:{$HOME}/.cargo/bin:{$PATH}
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export PROMPT_EOL_MARK='↵'
+export GOPATH=/opt/go
 
 alias v='nvim'
 alias l='/bin/ls'
