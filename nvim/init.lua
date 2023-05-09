@@ -16,6 +16,7 @@ vim.o.shiftwidth=4
 vim.o.encoding='UTF-8'
 vim.o.fileencodings='UTF-8,GBK,GB2312'
 
+vim.opt.termguicolors = true
 
 -- Options --
 vim.cmd([[ 
@@ -143,6 +144,11 @@ return require('packer').startup(function()
 
     -- Highlight Same Words --
     use { 'RRethy/vim-illuminate' }
+
+    -- Tab Bar --
+    -- use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    -- vim.opt.termguicolors = true
+    -- require("bufferline").setup{}
 
     -- Code game --
     -- use { 'eandrju/cellular-automaton.nvim' }
