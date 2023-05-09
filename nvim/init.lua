@@ -19,7 +19,7 @@ vim.o.fileencodings='UTF-8,GBK,GB2312'
 
 -- Options --
 vim.cmd([[ 
-    set background=light
+    set background=dark
     colorscheme edge 
     let g:edge_better_performance = 1
 ]])
