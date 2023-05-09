@@ -101,21 +101,6 @@ return require('packer').startup(function()
         end
     }
 
-    -- Tab Bar --
-    use {'akinsho/bufferline.nvim', tag = "v2.*"}
-    vim.opt.termguicolors = true
-    require("bufferline").setup{
-        options = {
-            separator_style = "thin",
-            offsets = {{
-                filetype = "NvimTree",
-                text = "[ TREE ]",
-                highlight = "Directory",
-                text_align = "left"
-            }}
-        }
-    }
-
     -- File Explorer --
     use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
     require("nvim-tree").setup({
