@@ -1,3 +1,5 @@
+set -U fish_greeting "~# LanikeA_"
+
 set PATH /opt/homebrew/bin:{$HOME}/.cargo/bin:{$PATH}
 
 export LANG=en_US.UTF-8
