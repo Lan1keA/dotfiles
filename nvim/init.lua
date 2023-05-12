@@ -13,17 +13,14 @@ vim.o.cursorline=true
 vim.o.cursorcolumn=true
 vim.o.tabstop=4
 vim.o.shiftwidth=4
+vim.o.background = "dark"
+vim.o.clipboard = "unnamedplus"
 vim.o.encoding='UTF-8'
 vim.o.fileencodings='UTF-8,GBK,GB2312'
 
+vim.g.edge_better_performance = 1
 vim.opt.termguicolors = true
-
--- Options --
-vim.cmd([[ 
-    set background=dark
-    colorscheme edge 
-    let g:edge_better_performance = 1
-]])
+vim.cmd('colorscheme edge')
 
 
 -- Key Maps --
@@ -33,11 +30,6 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeCollapse<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-s>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', ':CommentToggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-o>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-i>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-f>', '<C-d>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-d>', '<C-u>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 vim.cmd([[
     inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
     inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
