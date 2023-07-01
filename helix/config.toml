@@ -1,11 +1,11 @@
-theme = "nord_light"
+theme = "rose_pine_dawn"
 
 [editor]
-line-number = "relative"
-mouse = true
-true-color = true
-cursorline = true
-gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+line-number  = "relative"
+mouse        = true
+true-color   = true
+cursorline   = true
+cursorcolumn = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -14,9 +14,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
-
-[keys.insert]
-j = { j = "normal_mode" }
 
 [editor.lsp]
 display-messages = true
@@ -29,3 +26,6 @@ separator = "│"
 mode.normal = "NORMAL "
 mode.insert = "INSERT "
 mode.select = "SELECT "
+
+[keys.insert]
+j = { j = "normal_mode" }
