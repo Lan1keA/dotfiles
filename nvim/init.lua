@@ -1,149 +1,41 @@
--- packer.nvim Bootstrap --
-local packer_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
-    packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path})
+-- lazy.nvim Bootstrap --
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
+vim.opt.rtp:prepend(lazypath)
 
+-- Plugins --
+require("lazy").setup({
+	{ "sainnhe/edge" },
+	{
+		"LazyVim/LazyVim",
+		import = "lazyvim.plugins",
+		opts = {
+			colorscheme = "edge",
+		},
+	},
+})
 
--- Global Variables --
-vim.o.nu=true
-vim.o.rnu=true
-vim.o.expandtab=true
-vim.o.cursorline=true
-vim.o.cursorcolumn=true
-vim.o.tabstop=4
-vim.o.shiftwidth=4
+-- Neovim Options --
+vim.o.nu = true
+vim.o.rnu = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.cursorline = true
+vim.o.cursorcolumn = true
+vim.o.termguicolors = true
+vim.o.encoding = "UTF-8"
 vim.o.background = "light"
 vim.o.clipboard = "unnamedplus"
-vim.o.encoding='UTF-8'
-vim.o.fileencodings='UTF-8,GBK,GB2312'
-
-vim.g.edge_better_performance = 1
-vim.opt.termguicolors = true
-vim.cmd('colorscheme edge')
-
 
 -- Key Maps --
-vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Esc>', ':q<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-t>', '<C-w>s<C-w>j:terminal<CR>i', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeCollapse<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-s>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-h>', ':CommentToggle<CR>', { noremap = true, silent = true })
-vim.cmd([[
-    inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
-    inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
-    inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
-    inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
-    inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
-]])
-
-
---  Neovim Plugins --
-return require('packer').startup(function() 
-
-    use 'wbthomason/packer.nvim'
-
-    -- Themes --
-    use 'sainnhe/edge'
-
-    -- Icons --
-    use 'kyazdani42/nvim-web-devicons'
-
-    -- Lua Airline --
-    use 'nvim-lualine/lualine.nvim'
-    require('lualine').setup {
-        options = { theme = 'auto',
-            section_separators = { left = '', right = ''},
-            component_separators = { left = '', right = '' }
-        }
-    }
-
-    -- Dashboard --
-    use {
-        'goolord/alpha-nvim',
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.startify'.config)
-        end
-    }
-    
-    -- Edit Enhance --
-    use 'jiangmiao/auto-pairs'
-
-    -- LSP --
-    use {'neoclide/coc.nvim', branch = 'release'}
-
-    -- Indent Indicator --
-    use "lukas-reineke/indent-blankline.nvim"
-    vim.opt.list = true
-    vim.opt.listchars:append "space:⋅"
-    require("indent_blankline").setup {
-        show_end_of_line = true,
-        space_char_blankline = " ",
-    }
-
-    -- Comment Shortcut --
-    use "terrortylor/nvim-comment"
-    require('nvim_comment').setup()
-
-    -- Git Status --
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-
-    -- File Explorer --
-    use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
-    require("nvim-tree").setup({
-        sort_by = "case_sensitive",
-        view = {
-            adaptive_size = true,
-            mappings = {
-                list = {
-                    { key = "u", action = "dir_up" },
-                },
-            },
-        },
-        renderer = {
-            group_empty = true,
-        },
-        filters = {
-            dotfiles = true,
-        },
-    })
-
-    -- Scroll Bar --
-    use { 'dstein64/nvim-scrollview' }
-    require('scrollview').setup({
-        excluded_filetypes = {'nerdtree'},
-        current_only = true,
-        base = 'right'
-    })
-
-    -- Advance Menu --
-    use {
-        'gelguy/wilder.nvim',
-        config = function()
-            local wilder = require('wilder')
-            wilder.setup({modes = {':', '/', '?'}})
-            wilder.set_option('renderer', wilder.popupmenu_renderer({
-                pumblend = 20,
-            }))
-        end,
-    }
-
-    -- Highlight Same Words --
-    use { 'RRethy/vim-illuminate' }
-
-    -- Tab Bar --
-    -- use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
-    -- vim.opt.termguicolors = true
-    -- require("bufferline").setup{}
-
-    -- Code game --
-    -- use { 'eandrju/cellular-automaton.nvim' }
-
-end)
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
