@@ -1,4 +1,4 @@
-set -U fish_greeting "~# LanikeA_"
+set -U fish_greeting "~# ZarKivY_"
 
 set PATH /usr/local/bin/:/opt/homebrew/bin:{$HOME}/.cargo/bin:{$PATH}:{$HOME}/.local/bin
 
@@ -21,6 +21,5 @@ alias ipy='ipython3'
 alias py='python -q'
 alias dk='sudo docker'
 alias f.n='find . -name'
-alias ncdu='ncdu --color dark'
 alias pms='python -m http.server'
 alias tmus='tmux new-session \; new-window \; split-window -h \; select-pane -L \; split-window -v \; new-window \; split-window -h \; select-window -p \; select-pane -R \; attach'
