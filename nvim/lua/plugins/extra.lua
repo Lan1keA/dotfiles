@@ -1,4 +1,4 @@
 return {
-	{ "sainnhe/edge" },
+	{ "raphamorim/lucario" },
 	{ "github/copilot.vim" },
 }

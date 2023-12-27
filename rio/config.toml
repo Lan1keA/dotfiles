@@ -1,11 +1,10 @@
-
 # Editor
 #
 # Default editor is "vi".
 #
 # Whenever the key binding `OpenConfigEditor` is triggered it will
 # use the value of the editor along with the rio configuration path.
-# editor = 'vi'
+# editor = 'nvim'
 
 # Cursor
 #
@@ -18,7 +17,7 @@ cursor = '▇'
 #
 # Default is false
 #
-blinking-cursor = false
+blinking-cursor = true
 
 # Ignore theme selection foreground color
 #
@@ -34,7 +33,7 @@ blinking-cursor = false
 # (windows: C:\Users\USER\AppData\Local\rio\themes\dracula.toml)
 #
 # Example:
-# theme = "dracula"
+theme = "lucario"
 
 # Padding-x
 #
@@ -100,14 +99,14 @@ blinking-cursor = false
 # • decorations - Set window decorations, options: "Enabled", "Disabled", "Transparent", "Buttonless"
 #
 # Example:
-# [window]
-# width = 600
-# height = 400
-# mode = "Windowed"
-# foreground-opacity = 1.0
-# background-opacity = 1.0
-# blur = false
-# decorations = "Enabled"
+[window]
+width = 1200
+height = 800
+mode = "Windowed"
+foreground-opacity = 1.0
+background-opacity = 0.8
+blur = true
+decorations = "Enabled"
 
 # Renderer
 #
@@ -151,17 +150,12 @@ blinking-cursor = false
 # will always look for regular font bounds whene
 #
 # You can also set family on root to overwritte all fonts
-# [fonts]
-#   family = "cascadiamono"
-#
+[fonts]
+size = 18
+family = "CaskaydiaCove Nerd Font"
+# family = "FiraCode Nerd Font"
 # You can also specify extra fonts to load
-# [fonts]
 # extras = [{ family = "Microsoft JhengHei" }]
-#
-#
-# Example:
-# [fonts]
-# size = 18
 #
 # [fonts.regular]
 # family = "cascadiamono"
@@ -214,11 +208,11 @@ blinking-cursor = false
 # "color-automation" - Set a specific color for the tab whenever a specific program is running, or in a specific directory.
 #
 # Example:
-# [navigation]
-# mode = "CollapsedTab"
-# clickable = false
-# use-current-path = false
-# color-automation = []
+[navigation]
+mode = "CollapsedTab"
+clickable = true
+use-current-path = false
+color-automation = []
 
 # Shell
 #
@@ -292,6 +286,6 @@ blinking-cursor = false
 # [developer]
 # log-level = "OFF"
 
-[adaptive-theme]
-light = "belafonte-day"
-dark = "belafonte-night"
+# [adaptive-theme]
+# light = "lucario"
+# dark = "lucario"

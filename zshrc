@@ -4,7 +4,9 @@ plugins=(
     extract
 )
 
+source ~/.profile
 export PROMPT_EOL_MARK='↵'
+export COLORTERM=truecolor
 export PATH=/opt/homebrew/bin:$PATH
 
 alias v='nvim'
