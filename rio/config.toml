@@ -50,7 +50,7 @@ family = "CaskaydiaCove Nerd Font"
 mode = "CollapsedTab"
 clickable = true
 use-current-path = false
-color-automation = [{ program = "ssh", color = "#00ff00" }]
+color-automation = [{ program = "ssh", color = "#199c4b" }]
 
 # [scroll]
 # multiplier = 3.0
