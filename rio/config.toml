@@ -19,8 +19,8 @@ width = 1200
 height = 800
 mode = "Windowed"
 foreground-opacity = 1.0
-background-opacity = 1.0
-blur = false
+background-opacity = 0.8
+blur = true
 decorations = "Enabled"
 
 [fonts]
@@ -64,7 +64,7 @@ color-automation = [{ program = "ssh", color = "#199c4b" }]
 # args = ["new-session", "-c", "/var/www"]
 
 # [colors]
-# background = '#24262a'
+# background = '#555a64'
 # foreground = '#c5cdd9'
 # cursor = '#f8f8f2'
 # tabs = '#354157'
