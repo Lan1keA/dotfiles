@@ -501,6 +501,7 @@
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
   "Option Key Sends" : 0,
+  "Minimum Contrast" : 0,
   "Ansi 15 Color" : {
     "Green Component" : 1,
     "Red Component" : 1,
@@ -512,11 +513,13 @@
     "Red Component" : 0.55785846710205078,
     "Blue Component" : 0.47226718068122864
   },
-  "Transparency" : 0.10315159574468075,
+  "Transparency" : 0.10227726063829787,
   "Background Color" : {
-    "Green Component" : 0.24313725531101227,
-    "Red Component" : 0.16862745583057404,
-    "Blue Component" : 0.31372550129890442
+    "Red Component" : 0.16862745098039217,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.31372549019607843,
+    "Alpha Component" : 1,
+    "Green Component" : 0.23921568691730499
   },
   "Screen" : -1,
   "Non Ascii Font" : "Monaco 12",
@@ -530,6 +533,6 @@
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
   "Custom Directory" : "No",
-  "Thin Strokes" : 4,
-  "ASCII Ligatures" : false
+  "ASCII Ligatures" : false,
+  "Thin Strokes" : 4
 }
