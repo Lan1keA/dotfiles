@@ -1,9 +1,3 @@
-plugins=(
-    git
-    sudo
-    extract
-)
-
 source ~/.profile
 export PROMPT_EOL_MARK='↵'
 export COLORTERM=truecolor
@@ -38,8 +32,14 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma-continuum/fast-syntax-highlighting
-
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
+
+zinit light zsh-users/zsh-autosuggestions
+
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
+
+zinit snippet OMZ::lib/git.zsh
+zinit snippet OMZ::plugins/git/git.plugin.zsh
